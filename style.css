@@ -1,0 +1,30 @@
+.main{
+    
+    border: 20px solid chocolate;
+    width: 335px;
+
+}
+
+.evaluation,#back-remove,#remove{
+    border: 1px solid green;
+    width: 80px;
+    height: 70px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 3px;
+    background-color: chartreuse;
+    font-size: large;
+
+
+}
+
+#text-view{
+    width: 330px;
+    height: 50px;
+    border: 3px solid rebeccapurple;
+    border-radius: 15px;
+    background-color: cyan;
+    color: firebrick;
+    font-weight: 800;
+    font-size: medium;
+}

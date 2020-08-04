@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="main">
+        <form action="" class="text-input">
+            <input id="text-view">
+        </form>
+        <table class="number-value">
+            <tr>
+                <td><input onclick="addText('*')" class="evaluation" type="button" value="X"></td>
+                <td><input onclick="addText('/')" class="evaluation" type="button" value="/"></td>
+                <td><input onclick="backSpace()"  id="back-remove" type="button" value="<"></td>
+                <td><input onclick="removeAll()" id="remove" type="button" value="C"></td>
+            </tr>
+            <tr>
+                <td><input onclick="addText(7)" class="evaluation" type="button" value="7"></td>
+                <td><input onclick="addText(8)" class="evaluation" type="button" value="8"></td>
+                <td><input onclick="addText(9)" class="evaluation" type="button" value="9"></td>
+                <td><input onclick="addText('-')" class="evaluation" type="button" value="-"></td>
+               
+            </tr>
+            <tr>
+                <td><input onclick="addText(4)" class="evaluation" type="button" value="4"></td>
+                <td><input onclick="addText(5)" class="evaluation" type="button" value="5"></td>
+                <td><input onclick="addText(6)" class="evaluation" type="button" value="6"></td>
+                <td><input onclick="addText('+')" class="evaluation" type="button" value="+"></td>   
+            </tr>
+            <tr><td><input onclick="addText(1)" class="evaluation" type="button" value="1"></td>
+                <td><input onclick="addText(2)" class="evaluation" type="button" value="2"></td>
+                <td><input onclick="addText(3)" class="evaluation" type="button" value="3"></td>
+                <td><input onclick="evaluation()" class="evaluation" type="button" value="="></td>
+            </tr>
+            <tr>
+                
+                <td><input onclick="addText('.')" class="evaluation" type="button" value="."></td>
+                <td><input onclick="addText(0)" class="evaluation" type="button" value="0"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        // document.getElementById("evaluation").addEventListener("click",function () {
+        //     addText();
+        // })
+        function addText(valueButton) {
+
+            let updateValue = document.getElementById("text-view").value;
+
+            updateValue=updateValue+valueButton;
+            document.getElementById("text-view").value=updateValue;
+
+        }
+
+        function evaluation() {
+            let textValue= document.getElementById("text-view").value;
+            if(textValue)
+            {
+                document.getElementById("text-view").value=eval(textValue);
+            }
+
+
+        }
+        function removeAll() {
+
+            document.getElementById("text-view").value="";
+            
+        }
+
+        function backSpace() {
+            let textValue =document.getElementById("text-view").value;
+            document.getElementById("text-view").value=textValue.substring(0,textValue.length-1);
+            
+        }
+
+
+    </script>
+</body>
+</html>
